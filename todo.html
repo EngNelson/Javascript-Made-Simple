@@ -14,12 +14,15 @@
         let todos = [{
             title: "Get groceries",
             dueDate: "2021-10-04",
+            id: "id1",
         }, {
             title: "Wash Car",
             dueDate: "2021-02-03",
+            id: "id2",
         }, {
             title: "Make dinner",
             dueDate: "2021-03-04",
+            id: "id3",
         }, ];
 
         render();
@@ -38,13 +41,19 @@
 
             const datePicker = document.getElementById("date-picker");
             const dueDate = datePicker.value;
+
+            const id = new Date().getTime();
+
             todos.push({
                 title: title,
                 dueDate: dueDate,
+                id: id,
             });
 
             render();
         }
+
+        function deleteTodo() {}
 
         function render() {
             // reset our list
@@ -52,6 +61,13 @@
             todos.forEach(function(todo) {
                 let element = document.createElement("div");
                 element.innerText = todo.title + "" + todo.dueDate;
+
+                const deleteButton = document.createElement("button");
+                deleteButton.innerText = "Delete";
+                deleteButton.style = "margin-left: 12px";
+                deleteButton.onclick = deleteTodo;
+                deleteButton.id = todo.id;
+                element.appendChild(deleteButton);
                 let todoList = document.getElementById("todo-list");
                 document.body.appendChild(element);
             });
