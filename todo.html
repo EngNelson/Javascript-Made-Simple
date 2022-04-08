@@ -35,6 +35,8 @@
                 dueDate: dueDate,
                 id: id,
             });
+
+            saveTodos();
         }
         // HTML
 
@@ -50,6 +52,12 @@
                     return true;
                 }
             });
+
+            saveTodos();
+        }
+
+        function saveTodos() {
+            localStorage.setItem("todos", JSON.stringify(todos));
         }
 
         //   CONTROLLER
