@@ -66,3 +66,26 @@ function addTodo(todo Title, priority){
    Example: greeting('Simon'); => "Hello Simon"
 
 2. Write a
+
+# JS Variable Syntax
+
+- There are three of them.
+
+# let, const, var
+
+-let: can be reassigned.
+
+- const: Constant(can't be reassigned)
+
+# JS OBJECTS
+
+- Objects group different values that are related
+
+let todo = {
+title: 'Get groceries', Property-value pairs
+dueDate: '2021-10-04' (also called: key-value pairs)
+}
+
+# CONDITIONALS
+
+-If statements

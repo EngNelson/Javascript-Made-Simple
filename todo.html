@@ -54,7 +54,18 @@
         }
 
         function func() {
-            return "one hundred";
+            const num1 = 1;
+            const num5 = 5;
+
+            if (num1 > num5) {
+                console.log("run this code");
+            } else if (num1 > 100) {
+                console.log("not run");
+            } else if (num1 > 0) {
+                console.log("true");
+            } else {
+                console.log("other");
+            }
         }
 
         function deleteTodo(event) {
@@ -62,6 +73,8 @@
             const idToDelete = deleteButton.id;
 
             todos.filter(function(todo) {
+                // If the id of this todo matches idToDelete, return false
+                // For everything else, return true
                 return true;
             });
         }
