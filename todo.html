@@ -36,6 +36,8 @@
                 id: id,
             });
         }
+        // HTML
+
         // DELETES A TODO
         function removeTodo(idToDelete) {
             todos = todos.filter(function(todo) {
@@ -50,6 +52,8 @@
             });
         }
 
+        //   CONTROLLER
+
         function addTodo() {
             const textbox = document.getElementById("todo-title");
             const title = textbox.value;
@@ -58,7 +62,6 @@
             const dueDate = datePicker.value;
 
             createTodo(title, dueDate);
-
             render();
         }
 
@@ -70,11 +73,13 @@
             render();
         }
 
+        // VIEW
+
         function render() {
             // reset our list
             document.getElementById("todo-list").innerHTML = "";
             todos.forEach(function(todo) {
-                let element = document.createElement("div");
+                const element = document.createElement("div");
                 element.innerText = todo.title + "" + todo.dueDate;
 
                 const deleteButton = document.createElement("button");

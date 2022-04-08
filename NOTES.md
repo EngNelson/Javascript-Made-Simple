@@ -110,3 +110,28 @@ dueDate: '2021-10-04' (also called: key-value pairs)
 
 1. Responds to events from the view(e.g button clicks)
 2. Tells the model to update its data(and the view to re-render)
+
+- MVC allows each section to only do 1 thing.
+
+# HOW DOES MVC HELP YOU IN FINDING A JOB?
+
+1. You can build bigger and more impressive projects.
+   (For your portfolio that you share with the company)
+
+2. Most Javascript frameworks are built on MVC.
+
+- What is JavaScript framework?
+- Provides common functions, methods, and objects for
+  rendering visuals and managing data.
+- Makes code more consistent
+- It can render function
+
+function render(){
+//1.Blow away(erase)the list.
+//2.Re-render the list
+
+Another Developer:
+
+//1.Keep the list the same
+//2.Look at what changed and only re-render what's neccessary
+}
