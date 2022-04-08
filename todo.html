@@ -12,19 +12,29 @@
 
     <script>
         // MODEL
-        let todos = [{
-            title: "Get groceries",
-            dueDate: "2021-10-04",
-            id: "id1",
-        }, {
-            title: "Wash Car",
-            dueDate: "2021-02-03",
-            id: "id2",
-        }, {
-            title: "Make dinner",
-            dueDate: "2021-03-04",
-            id: "id3",
-        }, ];
+        // IF LOCALSTORAGE HAS A TODOS ARRAY, THEN USE IT
+        // OTHERWISE USE THE DEFAULT ARRAY.
+        let todos;
+
+        // RETRIEVE LOCALSTORAGE
+        const saveTodos = JSON.parse(localStorage.getItem("todos"));
+        // CHECK IF IT'S AN ARRAY
+
+        if (Array.isArray(saveTodos)) {} else {
+            todos = [{
+                title: "Get groceries",
+                dueDate: "2021-10-04",
+                id: "id1",
+            }, {
+                title: "Wash Car",
+                dueDate: "2021-02-03",
+                id: "id2",
+            }, {
+                title: "Make dinner",
+                dueDate: "2021-03-04",
+                id: "id3",
+            }, ];
+        }
 
         // CREATES A TODO
         function createTodo(title, dueDate) {
