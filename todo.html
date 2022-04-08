@@ -37,6 +37,18 @@
             });
         }
         // DELETES A TODO
+        function removeTodo(idToDelete) {
+            todos = todos.filter(function(todo) {
+                // If the id of this todo matches idToDelete, return false
+                // For everything else, return true
+
+                if (todo.id === idToDelete) {
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+        }
 
         function addTodo() {
             const textbox = document.getElementById("todo-title");
@@ -50,35 +62,11 @@
             render();
         }
 
-        function func() {
-            const num1 = 1;
-            const num5 = 5;
-
-            if (num1 > num5) {
-                console.log("run this code");
-            } else if (num1 > 100) {
-                console.log("not run");
-            } else if (num1 > 0) {
-                console.log("true");
-            } else {
-                console.log("other");
-            }
-        }
-
         function deleteTodo(event) {
             const deleteButton = event.target;
             const idToDelete = deleteButton.id;
 
-            todos = todos.filter(function(todo) {
-                // If the id of this todo matches idToDelete, return false
-                // For everything else, return true
-
-                if (todo.id === idToDelete) {
-                    return false;
-                } else {
-                    return true;
-                }
-            });
+            removeTodo(idToDelete);
             render();
         }
 
