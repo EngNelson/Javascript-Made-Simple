@@ -89,3 +89,24 @@ dueDate: '2021-10-04' (also called: key-value pairs)
 # CONDITIONALS
 
 -If statements
+
+# MVC
+
+- Model View Controller
+- It's way to structure our code.
+
+# MODEL
+
+- Contains all the code that saves and manages data.
+
+# VIEW
+
+- Contains all the code that manages visuals.
+  Renders visuals using data in the model.
+
+# CONTROLLER
+
+- Connects Model and View together:
+
+1. Responds to events from the view(e.g button clicks)
+2. Tells the model to update its data(and the view to re-render)

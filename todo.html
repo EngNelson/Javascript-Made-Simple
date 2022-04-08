@@ -11,6 +11,7 @@
     <div id="todo-list"></div>
 
     <script>
+        // MODEL
         let todos = [{
             title: "Get groceries",
             dueDate: "2021-10-04",
@@ -25,30 +26,26 @@
             id: "id3",
         }, ];
 
-        render();
-
-        function todoTitle() {
-            const textbox = document.getElement("todo-title");
-            const title = textbox.value;
-            todos.push(title);
-
-            render();
-        }
-
-        function addTodo() {
-            let textbox = document.getElementById("todo-title");
-            let title = textbox.value;
-
-            const datePicker = document.getElementById("date-picker");
-            const dueDate = datePicker.value;
-
-            const id = new Date().getTime();
+        // CREATES A TODO
+        function createTodo(title, dueDate) {
+            const id = "" + new Date().getTime();
 
             todos.push({
                 title: title,
                 dueDate: dueDate,
                 id: id,
             });
+        }
+        // DELETES A TODO
+
+        function addTodo() {
+            const textbox = document.getElementById("todo-title");
+            const title = textbox.value;
+
+            const datePicker = document.getElementById("date-picker");
+            const dueDate = datePicker.value;
+
+            createTodo(title, dueDate);
 
             render();
         }
@@ -72,11 +69,17 @@
             const deleteButton = event.target;
             const idToDelete = deleteButton.id;
 
-            todos.filter(function(todo) {
+            todos = todos.filter(function(todo) {
                 // If the id of this todo matches idToDelete, return false
                 // For everything else, return true
-                return true;
+
+                if (todo.id === idToDelete) {
+                    return false;
+                } else {
+                    return true;
+                }
             });
+            render();
         }
 
         function render() {
